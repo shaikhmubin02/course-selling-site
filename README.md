@@ -33,21 +33,24 @@ To run this project locally, you'll need to have the following dependencies inst
 
 1. Clone the repository: 
 
+git clone https://github.com/shaikhmubin02/course-selling-site
+
 2. Navigate into the project directory: 
 
 ```base
 cd course-selling-website
-
+```
 3. Install dependencies: 
 
 ```bash
 npm install
+```
 
 4. Start the development server: 
 
 ```base
 node server/index.js
-
+```
 ## Usage
 
 Sign up or log in to access courses.
@@ -55,6 +58,6 @@ Browse through available courses.
 Add courses to your cart.
 Proceed to checkout and make a payment.
 
-Contributors
+# Contributors
 
 shaikh mubin
