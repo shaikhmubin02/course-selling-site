@@ -59,6 +59,10 @@ Add courses to your cart.
 
 Proceed to checkout and make a payment.
 
+## License
+
+MIT 
+
 ## Contributors
 
 shaikh mubin
