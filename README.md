@@ -1,8 +1,6 @@
 # Course selling site 
 
 
-This is a course selling website built using React.
-
 ## Description
 
 This project is aimed at providing a platform for selling courses online. It offers features such as user authentication, course listings, course details, cart functionality, and more.
@@ -33,8 +31,9 @@ To run this project locally, you'll need to have the following dependencies inst
 
 1. Clone the repository: 
 
+```base
 git clone https://github.com/shaikhmubin02/course-selling-site
-
+```
 2. Navigate into the project directory: 
 
 ```base
@@ -45,7 +44,6 @@ cd course-selling-site
 ```bash
 npm install
 ```
-
 4. Start the development server: 
 
 ```base
