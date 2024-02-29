@@ -38,7 +38,7 @@ git clone https://github.com/shaikhmubin02/course-selling-site
 2. Navigate into the project directory: 
 
 ```base
-cd course-selling-website
+cd course-selling-site
 ```
 3. Install dependencies: 
 
