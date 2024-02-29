@@ -54,10 +54,13 @@ node server/index.js
 ## Usage
 
 Sign up or log in to access courses.
+
 Browse through available courses.
+
 Add courses to your cart.
+
 Proceed to checkout and make a payment.
 
-# Contributors
+## Contributors
 
 shaikh mubin
