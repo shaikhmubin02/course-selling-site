@@ -1,26 +1,28 @@
-const mongoose = require("mongoose");
-const express = require('express');
-const { User, Course, Admin } = require("../db");
-const jwt = require('jsonwebtoken');
-const { SECRET } = require("../middleware/auth")
-const { authenticateJwt } = require("../middleware/auth");
+import mongoose from "mongoose";
+import express from 'express';
+import { User, Course, Admin } from "../db";
+import jwt from 'jsonwebtoken';
+import { SECRET } from "../middleware/auth";
+import { authenticateJwt } from "../middleware/auth";
+import { Document } from 'mongoose';
 
 const router = express.Router();
 
 router.get("/me", authenticateJwt, async (req, res) => {
-    const admin = await Admin.findOne({ username: req.user.username });
-    if (!admin) {
-      res.status(403).json({msg: "Admin doesnt exist"})
-      return
-    }
-    res.json({
-        username: admin.username
-    })
+  const userName = req.headers["userName"];
+  const admin = await Admin.findOne({ username: userName });
+  if (!admin) {
+    res.status(403).json({msg: "Admin doesnt exist"})
+    return
+  }
+  res.json({
+      username: admin.username
+  })
 });
 
 router.post('/signup', (req, res) => {
     const { username, password } = req.body;
-    function callback(admin) {
+    function callback(admin : Document<any, any> | null ) {
       if (admin) {
         res.status(403).json({ message: 'Admin already exists' });
       } else {
@@ -73,4 +75,4 @@ router.post('/signup', (req, res) => {
     res.json({ course });
   });
 
-  module.exports = router
+export default router
