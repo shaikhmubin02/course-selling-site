@@ -1,32 +1,30 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Course = exports.Admin = exports.User = void 0;
-const mongoose_1 = __importDefault(require("mongoose"));
+const mongoose = require("mongoose");
 // Define mongoose schemas
-const userSchema = new mongoose_1.default.Schema({
-    username: { type: String },
+const userSchema = new mongoose.Schema({
+    username: {type: String},
     password: String,
-    purchasedCourses: [{ type: mongoose_1.default.Schema.Types.ObjectId, ref: 'Course' }]
-});
-const adminSchema = new mongoose_1.default.Schema({
+    purchasedCourses: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Course' }]
+  });
+  
+const adminSchema = new mongoose.Schema({
     username: String,
     password: String
-});
-const courseSchema = new mongoose_1.default.Schema({
+  });
+  
+const courseSchema = new mongoose.Schema({
     title: String,
     description: String,
     price: Number,
     imageLink: String,
     published: Boolean
-});
-exports.User = mongoose_1.default.model('User', userSchema);
-exports.Admin = mongoose_1.default.model('Admin', adminSchema);
-exports.Course = mongoose_1.default.model('Course', courseSchema);
-// export default {
-//   User,
-//   Admin,
-//   Course
-// }
+  });
+
+const User = mongoose.model('User', userSchema);
+const Admin = mongoose.model('Admin', adminSchema);
+const Course = mongoose.model('Course', courseSchema);
+  
+  module.exports = {
+    User,
+    Admin,
+    Course
+  }

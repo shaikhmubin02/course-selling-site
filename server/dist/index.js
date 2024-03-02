@@ -1,19 +1,20 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const mongoose_1 = __importDefault(require("mongoose"));
-const cors_1 = __importDefault(require("cors"));
-const admin_1 = __importDefault(require("./routes/admin"));
-const user_1 = __importDefault(require("./routes/user"));
-const app = (0, express_1.default)();
-app.use((0, cors_1.default)());
-app.use(express_1.default.json());
-app.use("/admin", admin_1.default);
-app.use("/user", user_1.default);
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const adminRouter = require("./routes/admin");
+const userRouter = require("./routes/user");
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.use("/admin", adminRouter)
+app.use("/user", userRouter)
+
+
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose_1.default.connect('mongodb+srv://shaikhmubin5502:shaikhmubin@cluster0.752s5ux.mongodb.net/', { dbName: "courses" });
+mongoose.connect('mongodb+srv://shaikhmubin5502:shaikhmubin@cluster0.752s5ux.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
+
 app.listen(3000, () => console.log('Server running on port 3000'));
