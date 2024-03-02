@@ -47,7 +47,7 @@ npm install
 4. Start the development server: 
 
 ```base
-ts-node server/index.ts
+node server/dist/index.ts
 ```
 ## Usage
 
