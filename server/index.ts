@@ -15,6 +15,6 @@ app.use("/user", userRouter)
 
 // Connect to MongoDB
 // DONT MISUSE THIS THANKYOU!!
-mongoose.connect('mongodb+srv://shaikhmubin5502:P4rswNfRZuFirxWf@cluster0.rgovdcp.mongodb.net/', { dbName: "courses" });
+mongoose.connect('mongodb+srv://shaikhmubin5502:shaikhmubin@cluster0.752s5ux.mongodb.net/', { dbName: "courses" });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
